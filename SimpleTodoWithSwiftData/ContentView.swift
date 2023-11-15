@@ -6,16 +6,25 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
+
+    @Query private var todos: [ToDo] = []
+    @Environment(\.modelContext) var context
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        List {
+            ForEach(todos) { todo in
+                Text(todo.task)
+            }
         }
-        .padding()
+    }
+
+    func store(task: String) {
+        let data = ToDo(task: task, 
+                        createdAt: Date())
+        context.insert(data)
     }
 }
 
