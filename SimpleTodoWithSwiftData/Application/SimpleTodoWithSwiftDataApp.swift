@@ -12,8 +12,8 @@ import SwiftData
 struct SimpleTodoWithSwiftDataApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .modelContainer(for: ToDo.self)
+            TodoListView()
+                .modelContainer(for: Todo.self)
         }
     }
 }

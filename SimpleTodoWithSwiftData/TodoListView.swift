@@ -8,9 +8,9 @@
 import SwiftUI
 import SwiftData
 
-struct ContentView: View {
+struct TodoListView: View {
 
-    @Query private var todos: [ToDo] = []
+    @Query private var todos: [Todo] = []
     @Environment(\.modelContext) var context
 
     var body: some View {
@@ -22,12 +22,13 @@ struct ContentView: View {
     }
 
     func store(task: String) {
-        let data = ToDo(task: task, 
+        let data = Todo(task: task, 
                         createdAt: Date())
         context.insert(data)
     }
 }
 
 #Preview {
-    ContentView()
+    TodoListView()
+        .modelContainer(for: Todo.self)
 }
