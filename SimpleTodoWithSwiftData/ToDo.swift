@@ -10,7 +10,7 @@ import SwiftData
 
 
 @Model
-final class ToDo {
+final class Todo {
     let task: String
     let createdAt: Date
     var isCompleted = false
