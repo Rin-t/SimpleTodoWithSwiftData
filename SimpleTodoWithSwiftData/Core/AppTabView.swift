@@ -12,12 +12,12 @@ struct AppTabView: View {
         TabView {
             TodoListView()
                 .tabItem {
-                    Label("Todo", systemImage: "doc.text")
+                    Label("やること", systemImage: "doc.text")
                 }
 
             CategoryView()
                 .tabItem {
-                    Label("Category", systemImage: "tray.2")
+                    Label("カテゴリ", systemImage: "tray.2")
                 }
         }
     }
