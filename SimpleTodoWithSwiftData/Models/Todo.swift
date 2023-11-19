@@ -18,5 +18,6 @@ final class Todo {
     init(task: String,
          category: Category? = nil) {
         self.task = task
+        self.category = category
     }
 }
