@@ -8,15 +8,15 @@
 import Foundation
 import SwiftData
 
-
 @Model
 final class Todo {
     let task: String
-    let createdAt: Date
+    let createdAt = Date()
     var isCompleted = false
+    var category: Category?
 
-    init(task: String, createdAt: Date) {
+    init(task: String,
+         category: Category? = nil) {
         self.task = task
-        self.createdAt = createdAt
     }
 }

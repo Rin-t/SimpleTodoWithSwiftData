@@ -17,6 +17,11 @@
 		241F226D2B03A8780051BFFE /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F226C2B03A8780051BFFE /* Todo.swift */; };
 		241F22732B08BE9E0051BFFE /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F22722B08BE9E0051BFFE /* AppTabView.swift */; };
 		241F22752B08BED80051BFFE /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F22742B08BED80051BFFE /* CategoryView.swift */; };
+		241F22782B08C4820051BFFE /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F22772B08C4820051BFFE /* Category.swift */; };
+		241F227C2B08CE7D0051BFFE /* AddTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F227B2B08CE7D0051BFFE /* AddTodoView.swift */; };
+		241F227F2B08D6F10051BFFE /* ActivateButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F227E2B08D6F10051BFFE /* ActivateButtonView.swift */; };
+		241F22812B08DD3D0051BFFE /* TodoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F22802B08DD3D0051BFFE /* TodoCardView.swift */; };
+		241F22852B08E1580051BFFE /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F22842B08E1580051BFFE /* Date+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +55,11 @@
 		241F226C2B03A8780051BFFE /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		241F22722B08BE9E0051BFFE /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		241F22742B08BED80051BFFE /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		241F22772B08C4820051BFFE /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		241F227B2B08CE7D0051BFFE /* AddTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoView.swift; sourceTree = "<group>"; };
+		241F227E2B08D6F10051BFFE /* ActivateButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateButtonView.swift; sourceTree = "<group>"; };
+		241F22802B08DD3D0051BFFE /* TodoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCardView.swift; sourceTree = "<group>"; };
+		241F22842B08E1580051BFFE /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,11 +110,10 @@
 		241F22412B03A7AC0051BFFE /* SimpleTodoWithSwiftData */ = {
 			isa = PBXGroup;
 			children = (
-				241F226E2B08B1500051BFFE /* Application */,
-				241F226C2B03A8780051BFFE /* Todo.swift */,
-				241F22442B03A7AC0051BFFE /* TodoListView.swift */,
-				241F22722B08BE9E0051BFFE /* AppTabView.swift */,
-				241F22742B08BED80051BFFE /* CategoryView.swift */,
+				241F22832B08E1440051BFFE /* Extensions */,
+				241F22762B08C46D0051BFFE /* Models */,
+				241F22822B08E12B0051BFFE /* Presentation */,
+				241F226E2B08B1500051BFFE /* Core */,
 				241F22482B03A7AE0051BFFE /* Preview Content */,
 			);
 			path = SimpleTodoWithSwiftData;
@@ -135,13 +144,83 @@
 			path = SimpleTodoWithSwiftDataUITests;
 			sourceTree = "<group>";
 		};
-		241F226E2B08B1500051BFFE /* Application */ = {
+		241F226E2B08B1500051BFFE /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				241F22422B03A7AC0051BFFE /* SimpleTodoWithSwiftDataApp.swift */,
+				241F22722B08BE9E0051BFFE /* AppTabView.swift */,
 				241F22462B03A7AE0051BFFE /* Assets.xcassets */,
 			);
-			path = Application;
+			path = Core;
+			sourceTree = "<group>";
+		};
+		241F22762B08C46D0051BFFE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				241F226C2B03A8780051BFFE /* Todo.swift */,
+				241F22772B08C4820051BFFE /* Category.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		241F22792B08CBBA0051BFFE /* TodoLiatTab */ = {
+			isa = PBXGroup;
+			children = (
+				241F22862B08E2800051BFFE /* Parent */,
+				241F22872B08E2890051BFFE /* Children */,
+			);
+			path = TodoLiatTab;
+			sourceTree = "<group>";
+		};
+		241F227A2B08CBCD0051BFFE /* CategoryTab */ = {
+			isa = PBXGroup;
+			children = (
+				241F22742B08BED80051BFFE /* CategoryView.swift */,
+			);
+			path = CategoryTab;
+			sourceTree = "<group>";
+		};
+		241F227D2B08D6B20051BFFE /* CommoneView */ = {
+			isa = PBXGroup;
+			children = (
+				241F227E2B08D6F10051BFFE /* ActivateButtonView.swift */,
+			);
+			path = CommoneView;
+			sourceTree = "<group>";
+		};
+		241F22822B08E12B0051BFFE /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				241F227D2B08D6B20051BFFE /* CommoneView */,
+				241F227A2B08CBCD0051BFFE /* CategoryTab */,
+				241F22792B08CBBA0051BFFE /* TodoLiatTab */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		241F22832B08E1440051BFFE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				241F22842B08E1580051BFFE /* Date+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		241F22862B08E2800051BFFE /* Parent */ = {
+			isa = PBXGroup;
+			children = (
+				241F22442B03A7AC0051BFFE /* TodoListView.swift */,
+			);
+			path = Parent;
+			sourceTree = "<group>";
+		};
+		241F22872B08E2890051BFFE /* Children */ = {
+			isa = PBXGroup;
+			children = (
+				241F227B2B08CE7D0051BFFE /* AddTodoView.swift */,
+				241F22802B08DD3D0051BFFE /* TodoCardView.swift */,
+			);
+			path = Children;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,10 +354,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				241F226D2B03A8780051BFFE /* Todo.swift in Sources */,
+				241F227F2B08D6F10051BFFE /* ActivateButtonView.swift in Sources */,
 				241F22452B03A7AC0051BFFE /* TodoListView.swift in Sources */,
+				241F227C2B08CE7D0051BFFE /* AddTodoView.swift in Sources */,
 				241F22732B08BE9E0051BFFE /* AppTabView.swift in Sources */,
+				241F22852B08E1580051BFFE /* Date+Extension.swift in Sources */,
 				241F22432B03A7AC0051BFFE /* SimpleTodoWithSwiftDataApp.swift in Sources */,
 				241F22752B08BED80051BFFE /* CategoryView.swift in Sources */,
+				241F22812B08DD3D0051BFFE /* TodoCardView.swift in Sources */,
+				241F22782B08C4820051BFFE /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
