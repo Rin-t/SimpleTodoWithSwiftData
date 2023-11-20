@@ -18,23 +18,42 @@ struct TodoListView: View {
 
     var body: some View {
         ZStack {
-            List {
-                Section("Todo一覧") {
-                    ForEach(todos) { todo in
-                        TodoCardView(todo: todo)
-                            .onTapGesture {
-                                todo.isCompleted.toggle()
-                                update()
-                            }
-                            .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                                Button {
-                                    context.delete(todo)
-                                } label: {
-                                    Image(systemName: "trash")
-                                }
-                                .tint(.red)
 
-                            }
+            VStack {
+
+
+
+                HStack {
+                    Spacer()
+
+                    Menu("絞り込み") {
+                        Button("完了のみ", action: create)
+                        Button("未完了のみ", action: create)
+                        Button("すべて", action: create)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .padding(.trailing, 24)
+                }
+
+
+                List {
+                    Section("やること一覧") {
+                        ForEach(todos) { todo in
+                            TodoCardView(todo: todo)
+                                .onTapGesture {
+                                    todo.isCompleted.toggle()
+                                    update()
+                                }
+                                .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                                    Button {
+                                        context.delete(todo)
+                                    } label: {
+                                        Image(systemName: "trash")
+                                    }
+                                    .tint(.red)
+
+                                }
+                        }
                     }
                 }
             }
@@ -49,12 +68,16 @@ struct TodoListView: View {
         }
     }
 
-    func delete(_ todo: Todo) {
+    private func delete(_ todo: Todo) {
         context.delete(todo)
     }
 
-    func update() {
+    private func update() {
         try? context.save()
+    }
+
+    private func create() {
+
     }
 }
 

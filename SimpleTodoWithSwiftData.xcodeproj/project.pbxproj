@@ -22,6 +22,7 @@
 		241F227F2B08D6F10051BFFE /* ActivateButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F227E2B08D6F10051BFFE /* ActivateButtonView.swift */; };
 		241F22812B08DD3D0051BFFE /* TodoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F22802B08DD3D0051BFFE /* TodoCardView.swift */; };
 		241F22852B08E1580051BFFE /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F22842B08E1580051BFFE /* Date+Extension.swift */; };
+		241F228B2B09E1FB0051BFFE /* AddCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241F228A2B09E1FB0051BFFE /* AddCategoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		241F227E2B08D6F10051BFFE /* ActivateButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateButtonView.swift; sourceTree = "<group>"; };
 		241F22802B08DD3D0051BFFE /* TodoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCardView.swift; sourceTree = "<group>"; };
 		241F22842B08E1580051BFFE /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		241F228A2B09E1FB0051BFFE /* AddCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,7 +177,8 @@
 		241F227A2B08CBCD0051BFFE /* CategoryTab */ = {
 			isa = PBXGroup;
 			children = (
-				241F22742B08BED80051BFFE /* CategoryView.swift */,
+				241F22892B09DFF80051BFFE /* Chileren */,
+				241F22882B09DF220051BFFE /* Parent */,
 			);
 			path = CategoryTab;
 			sourceTree = "<group>";
@@ -221,6 +224,22 @@
 				241F22802B08DD3D0051BFFE /* TodoCardView.swift */,
 			);
 			path = Children;
+			sourceTree = "<group>";
+		};
+		241F22882B09DF220051BFFE /* Parent */ = {
+			isa = PBXGroup;
+			children = (
+				241F22742B08BED80051BFFE /* CategoryView.swift */,
+			);
+			path = Parent;
+			sourceTree = "<group>";
+		};
+		241F22892B09DFF80051BFFE /* Chileren */ = {
+			isa = PBXGroup;
+			children = (
+				241F228A2B09E1FB0051BFFE /* AddCategoryView.swift */,
+			);
+			path = Chileren;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +381,7 @@
 				241F22432B03A7AC0051BFFE /* SimpleTodoWithSwiftDataApp.swift in Sources */,
 				241F22752B08BED80051BFFE /* CategoryView.swift in Sources */,
 				241F22812B08DD3D0051BFFE /* TodoCardView.swift in Sources */,
+				241F228B2B09E1FB0051BFFE /* AddCategoryView.swift in Sources */,
 				241F22782B08C4820051BFFE /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
