@@ -10,31 +10,47 @@ import SwiftData
 
 struct TodoListView: View {
 
+    private enum Filter {
+        case onlyCompleted
+        case unCompleted
+        case all
+
+        var title: String {
+            switch self {
+            case .onlyCompleted: "完了のみ"
+            case .unCompleted: "未完了のみ"
+            case .all: "すべて"
+            }
+        }
+    }
+
     @Environment(\.modelContext) var context
 
     @Query private var todos: [Todo] = []
 
     @State private var isSheetActive = false
+    @State private var filter: Filter = .all
 
     var body: some View {
         ZStack {
-
             VStack {
-
-
-
                 HStack {
                     Spacer()
 
-                    Menu("絞り込み") {
-                        Button("完了のみ", action: create)
-                        Button("未完了のみ", action: create)
-                        Button("すべて", action: create)
+                    Menu(filter.title) {
+                        Button(Filter.all.title) {
+                            filter = .all
+                        }
+                        Button(Filter.onlyCompleted.title) {
+                            filter = .onlyCompleted
+                        }
+                        Button(Filter.unCompleted.title) {
+                            filter = .unCompleted
+                        }
                     }
                     .buttonStyle(.borderedProminent)
                     .padding(.trailing, 24)
                 }
-
 
                 List {
                     Section("やること一覧") {
