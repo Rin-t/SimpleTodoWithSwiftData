@@ -31,6 +31,17 @@ struct TodoListView: View {
     @State private var isSheetActive = false
     @State private var filter: Filter = .all
 
+    private var filteredTodos: [Todo] {
+        switch filter {
+        case .onlyCompleted:
+            return todos.filter { $0.isCompleted }
+        case .unCompleted:
+            return todos.filter { !$0.isCompleted }
+        case .all:
+            return todos
+        }
+    }
+
     var body: some View {
         ZStack {
             VStack {
@@ -54,7 +65,7 @@ struct TodoListView: View {
 
                 List {
                     Section("やること一覧") {
-                        ForEach(todos) { todo in
+                        ForEach(filteredTodos) { todo in
                             TodoCardView(todo: todo)
                                 .onTapGesture {
                                     todo.isCompleted.toggle()
