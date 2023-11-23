@@ -58,7 +58,6 @@ struct AddTodoView: View {
     }
 
     func insert() {
-        print(selectedCategory?.name)
         let data = Todo(task: inputText, category: selectedCategory)
         context.insert(data)
     }

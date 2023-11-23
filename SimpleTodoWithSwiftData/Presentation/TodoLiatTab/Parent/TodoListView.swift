@@ -10,7 +10,7 @@ import SwiftData
 
 struct TodoListView: View {
 
-    private enum Filter {
+    private enum FilterType {
         case onlyCompleted
         case unCompleted
         case all
@@ -29,10 +29,10 @@ struct TodoListView: View {
     @Query private var todos: [Todo] = []
 
     @State private var isSheetActive = false
-    @State private var filter: Filter = .all
+    @State private var filterType: FilterType = .all
 
     private var filteredTodos: [Todo] {
-        switch filter {
+        switch filterType {
         case .onlyCompleted:
             return todos.filter { $0.isCompleted }
         case .unCompleted:
@@ -48,15 +48,15 @@ struct TodoListView: View {
                 HStack {
                     Spacer()
 
-                    Menu(filter.title) {
-                        Button(Filter.all.title) {
-                            filter = .all
+                    Menu(filterType.title) {
+                        Button(FilterType.all.title) {
+                            filterType = .all
                         }
-                        Button(Filter.onlyCompleted.title) {
-                            filter = .onlyCompleted
+                        Button(FilterType.onlyCompleted.title) {
+                            filterType = .onlyCompleted
                         }
-                        Button(Filter.unCompleted.title) {
-                            filter = .unCompleted
+                        Button(FilterType.unCompleted.title) {
+                            filterType = .unCompleted
                         }
                     }
                     .buttonStyle(.borderedProminent)
@@ -101,10 +101,6 @@ struct TodoListView: View {
 
     private func update() {
         try? context.save()
-    }
-
-    private func create() {
-
     }
 }
 
