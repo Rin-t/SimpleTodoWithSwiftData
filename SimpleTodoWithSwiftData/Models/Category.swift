@@ -11,6 +11,7 @@ import SwiftData
 @Model
 final class Category {
     
+    @Attribute(.unique)
     let name: String
 
     @Relationship(deleteRule: .cascade, inverse: \Todo.category)
