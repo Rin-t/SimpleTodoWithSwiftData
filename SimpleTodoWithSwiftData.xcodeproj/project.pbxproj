@@ -183,18 +183,18 @@
 			path = CategoryTab;
 			sourceTree = "<group>";
 		};
-		241F227D2B08D6B20051BFFE /* CommoneView */ = {
+		241F227D2B08D6B20051BFFE /* CommonView */ = {
 			isa = PBXGroup;
 			children = (
 				241F227E2B08D6F10051BFFE /* ActivateButtonView.swift */,
 			);
-			path = CommoneView;
+			path = CommonView;
 			sourceTree = "<group>";
 		};
 		241F22822B08E12B0051BFFE /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				241F227D2B08D6B20051BFFE /* CommoneView */,
+				241F227D2B08D6B20051BFFE /* CommonView */,
 				241F227A2B08CBCD0051BFFE /* CategoryTab */,
 				241F22792B08CBBA0051BFFE /* TodoLiatTab */,
 			);
