@@ -16,12 +16,25 @@ struct AddTodoView: View {
     @Query private var todos: [Todo] = []
 
     @State private var inputText = ""
+    @State private var selectedPriority: Priority?
 
 
     var body: some View {
         List {
             Section("やることを追加") {
                 TextField("追加するタスクを入力", text: $inputText)
+            }
+
+            Section("優先度を選択") {
+                Picker("", selection: $selectedPriority) {
+                    Text("選択なし")
+                        .tag(Priority?.none)
+
+                    ForEach(Priority.allCases, id: \.self) { priority in
+                        Text("\(priority.title)")
+                            .tag(Priority?.some(priority))
+                    }
+                }
             }
 
         }
@@ -39,7 +52,7 @@ struct AddTodoView: View {
     }
 
     func insert() {
-        let data = Todo(task: inputText)
+        let data = Todo(task: inputText, priority: selectedPriority)
         context.insert(data)
     }
 }
