@@ -14,10 +14,8 @@ struct AddTodoView: View {
     @Environment(\.dismiss) private var dismiss
 
     @Query private var todos: [Todo] = []
-    @Query private var categories: [Category] = []
 
     @State private var inputText = ""
-    @State private var selectedCategory: Category?
 
 
     var body: some View {
@@ -26,23 +24,6 @@ struct AddTodoView: View {
                 TextField("追加するタスクを入力", text: $inputText)
             }
 
-            Section("カテゴリを選択\n※カテゴリ指定しなくても保存は可能です") {
-                if categories.isEmpty {
-                    Text("カテゴリがありません。\nカテゴリタブから追加できます。")
-                        .font(.system(size: 12))
-                        .foregroundStyle(.gray)
-                } else {
-                    Picker("", selection: $selectedCategory) {
-                        Text("選択なし")
-                            .tag(Category?.none)
-
-                        ForEach(categories, id: \.self) { category in
-                            Text("\(category.name)")
-                                .tag(Category?.some(category))
-                        }
-                    }
-                }
-            }
         }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
@@ -58,12 +39,12 @@ struct AddTodoView: View {
     }
 
     func insert() {
-        let data = Todo(task: inputText, category: selectedCategory)
+        let data = Todo(task: inputText)
         context.insert(data)
     }
 }
 
 #Preview {
     AddTodoView()
-        .modelContainer(for: [Todo.self, Category.self])
+        .modelContainer(for: [Todo.self])
 }

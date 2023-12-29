@@ -13,11 +13,10 @@ final class Todo {
     let task: String
     let createdAt = Date()
     var isCompleted = false
-    var category: Category?
 
-    init(task: String,
-         category: Category? = nil) {
+    init(task: String) {
         self.task = task
-        self.category = category
     }
 }
+
+

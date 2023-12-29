@@ -12,7 +12,7 @@ import SwiftData
 struct SimpleTodoWithSwiftDataApp: App {
     var body: some Scene {
         WindowGroup {
-            AppTabView()
+            TodoListView()
                 .modelContainer(for: Todo.self)
         }
     }

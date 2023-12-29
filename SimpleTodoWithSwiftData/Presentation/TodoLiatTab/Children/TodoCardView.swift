@@ -28,8 +28,6 @@ struct TodoCardView: View {
                 Text("\(todo.task)")
                     .padding(.bottom, 8)
                     .font(.title)
-                Text("\(todo.category?.name ?? "カテゴリなし")")
-                    .foregroundStyle(.gray)
             }
 
             Spacer()
